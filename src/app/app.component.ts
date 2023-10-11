@@ -12,7 +12,7 @@ import { MatTableDataSource } from '@angular/material/table';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  // the columns that will be displayed in the employee details table
+  // all columns that will be displayed on table
   displayedColumns: string[] = [
     'id',
     'username',
@@ -25,13 +25,13 @@ export class AppComponent implements OnInit {
     'action',
   ];
  
-  // employee list will be assigned to this and it is passed as the data source to the mat-table in the HTML template 
+  // employee data 
   dataSource!: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  // dependency injection
+  // dependencies
   constructor(
     private dialog: MatDialog,
     private empService: EmployeeService,
@@ -65,7 +65,7 @@ export class AppComponent implements OnInit {
       },
     });
   }
-  // search employee data
+  
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();

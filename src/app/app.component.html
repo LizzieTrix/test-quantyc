@@ -1,10 +1,10 @@
-<!-- The toolbar of our app -->
+<!-- The app toolbar -->
 <mat-toolbar color="primary">
   <span>Simple Employee Management Crud App</span>
   <span class="example-spacer"></span>
   <button mat-raised-button color="accent" (click)="openAddEditEmployeeDialog()">ADD EMPLOYEE</button>
  </mat-toolbar>
- <!-- The body of our app -->
+ <!-- The app body -->
  <div class="main-body">
      <!-- The filter section -->
      <mat-form-field aria-haspopup="outline">
@@ -61,9 +61,9 @@
          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   
-         <!-- This row will be shown when there is no matching data. -->
+         <!-- This row will be shown if data cannot be found. -->
          <tr class="mat-row" *matNoDataRow>
-           <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+           <td class="mat-cell" colspan="4">No data found for "{{input.value}}"</td>
          </tr>
        </table>
   
